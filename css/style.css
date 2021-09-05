@@ -6,7 +6,7 @@ body {
   grid-template-rows: 50px 800px auto;
   grid-template-areas:
     "header header"
-    "aside content"
+    "aside main"
     "aside footer ";
 }
 ul {
@@ -32,6 +32,7 @@ header {
   overflow: hidden;
   position: sticky;
   top: 0;
+  z-index: 5000;
 }
 
 .header-menu {
@@ -44,9 +45,78 @@ header {
 }
 /*メイン*/
 main {
-  grid-area: content;
+  grid-area: main;
   background-color: #ccc;
   color: black;
+}
+
+/* アイキャッチャー */
+.eye-catch-container {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+}
+.big-eye-catch {
+  width: 70%;
+  height: 100%;
+}
+.small-eye-catch {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.big-eye-catch > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.small-eye-catch > picture {
+  display: block;
+  width: 100%;
+  height: 50%;
+}
+picture > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.big-eye-catch picture > h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: gray;
+}
+.top-picture,
+.bottom-picture {
+  position: relative;
+}
+.small-eye-catch .top-picture > h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 15px 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: gray;
+}
+.small-eye-catch .bottom-picture > h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 15px 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: gray;
 }
 /*サイド*/
 #aside.is-on .aside-menu {
@@ -66,7 +136,7 @@ aside {
 .aside-menu {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 270px;
   height: 0vh;
   overflow: auto;
   background-color: #595959;
