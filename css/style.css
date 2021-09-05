@@ -8,6 +8,7 @@ body {
     "header header"
     "aside main"
     "aside footer ";
+  overflow-x: hidden;
 }
 ul {
   list-style: none;
@@ -51,14 +52,18 @@ main {
 }
 
 /* アイキャッチャー */
-.eye-catch-container {
+/* .eye-catcher {
   width: 100%;
   height: 450px;
   display: flex;
   flex-direction: row;
 }
-.big-eye-catch {
+.swiper-container {
   width: 70%;
+  height: 100%;
+}
+.swiper-wrapper {
+  width: 100%;
   height: 100%;
 }
 .small-eye-catch {
@@ -68,7 +73,7 @@ main {
   flex-direction: column;
   position: relative;
 }
-.big-eye-catch > picture {
+.swiper-wrapper > picture {
   display: block;
   width: 100%;
   height: 100%;
@@ -84,7 +89,7 @@ picture > a > img {
   height: 100%;
   object-fit: cover;
 }
-.big-eye-catch picture > h2 {
+.swiper-wrapper picture > h2 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -117,7 +122,83 @@ picture > a > img {
   width: 100%;
   z-index: 1000;
   background-color: gray;
+} */
+.eye-catcher {
+  width: 1200px;
+  height: 450px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
 }
+.swiper-container {
+  width: 70%;
+  height: 450px;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* swiperスライド共通スタイル */
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.img-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.abstract-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* small eye-catcher のすたいる */
+.small-eye-cathcer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.top-picture {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+.top-picture > img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.top-picture > h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom-picture {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+.bottom-picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bottom-picture > h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 /*サイド*/
 #aside.is-on .aside-menu {
   height: 100vh;
@@ -131,6 +212,7 @@ aside {
   height: 100vh;
   position: fixed;
   top: 50px;
+  z-index: 5000;
 }
 
 .aside-menu {
